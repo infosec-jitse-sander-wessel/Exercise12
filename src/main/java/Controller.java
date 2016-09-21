@@ -35,7 +35,7 @@ public class Controller {
     }
 
     private void printHelpPage() {
-        System.out.println("Usage: <number>");
+        System.out.println("Usage: <prime number>");
     }
 
     public void run() throws ParseException {
@@ -54,7 +54,7 @@ public class Controller {
         int number = Integer.parseInt(arguments[0]);
 
         List<Integer> factors = primeFactorization(number - 1);
-        System.out.println(factors);
+
         List<Integer> validGenerators = IntStream.range(2, number)
                 .filter(generator -> validGenerator(generator, number, factors))
                 .boxed()
